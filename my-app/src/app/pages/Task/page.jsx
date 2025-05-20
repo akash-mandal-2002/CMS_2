@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../../../components/Navbar";
 import { IoAddOutline } from "react-icons/io5";
-import "../../../style/task.css";
 import { Button, Modal, ModalBody, ModalHeader } from "flowbite-react";
 import { HiOutlineDotsHorizontal } from "react-icons/hi";
 import {

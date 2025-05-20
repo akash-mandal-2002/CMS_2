@@ -1,5 +1,4 @@
-"use client"
-
+"use client";
 
 import React, { useEffect, useState } from "react";
 import jwt from "jsonwebtoken";
@@ -35,7 +34,7 @@ const Navbar = () => {
 
   return (
     <div className="navbar shadow-xl border-b border-gray-300 p-3 flex items-center justify-between sticky top-0 z-50 bg-white">
-      <div className="flex space-x-2 ">
+      <div className="md:flex space-x-2 hidden">
         <span className="text-2xl text-gray-600 mt-5">
           <IoSearchOutline />
         </span>
@@ -45,20 +44,22 @@ const Navbar = () => {
           className="placeholder-gray-400 font-normal  w-[50vw] h-[8vh] outline-0"
         />
       </div>
-      <div className="flex items-center space-x-6">
-        <label className="relative inline-flex items-center cursor-pointer">
+      <div className="flex items-center md:space-x-6">
+        {/* <label className="relative inline-flex items-center cursor-pointer">
           <input className="sr-only peer" type="checkbox" />
           <div className="w-16 h-7 rounded-full bg-gradient-to-r from-gray-400  peer-checked:from-gray-500 peer-checked:to-gray-500 transition-all duration-500 after:content-['☀️'] after:absolute after:top-0 after:left-1 after:bg-white after:rounded-full after:h-7 after:w-7 after:flex after:items-center after:justify-center after:transition-all after:duration-500 peer-checked:after:translate-x-10 peer-checked:after:content-['🌙'] after:shadow-md after:text-lg"></div>
-        </label>
-        <div className="bg-[#E9E8F5] w-10 p-2 rounded-full hover:cursor-pointer hover:bg-[#cfced9]">
-          <span className="text-2xl text-gray-700">
-            <PiBellSimpleThin />
-          </span>
-        </div>
-        <div className="bg-[#E9E8F5] w-10 p-2 rounded-full hover:cursor-pointer hover:bg-[#cfced9]">
-          <span className="text-2xl text-gray-700">
-            <AiOutlineMessage />
-          </span>
+        </label> */}
+        <div className="flex items-center mr-24 space-x-2">
+          <div className="bg-[#E9E8F5] w-10 p-2 rounded-full hover:cursor-pointer hover:bg-[#cfced9]">
+            <span className="text-2xl text-gray-700">
+              <PiBellSimpleThin />
+            </span>
+          </div>
+          <div className="bg-[#E9E8F5] w-10 p-2 rounded-full hover:cursor-pointer hover:bg-[#cfced9]">
+            <span className="text-2xl text-gray-700">
+              <AiOutlineMessage />
+            </span>
+          </div>
         </div>
         <div className="flex items-center space-x-3">
           {user && (
@@ -80,10 +81,10 @@ const Navbar = () => {
                       className="flex items-center space-x-4 login-btn text-body me-3 pe-3 cursor-pointer"
                       onClick={logout}
                     >
-                      <span>
-                          Logout
+                      <span>Logout</span>
+                      <span className="">
+                        <TbLogout />
                       </span>
-                      <span className=""><TbLogout/></span>
                     </span>
                   ) : (
                     <Link href="/User/Login">
